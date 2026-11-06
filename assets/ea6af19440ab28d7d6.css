@@ -1,0 +1,95 @@
+/* [project]/apps/web/src/styles/photo-interactions.css [app-client] (css) */
+.hanging-photo {
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: pan-y pinch-zoom;
+}
+
+.photo-strip-viewport[data-interacting="true"] .photo-strip-track {
+  animation-play-state: paused;
+}
+
+.photo-strip[data-dragging="true"] .photo-strip-viewport {
+  scroll-behavior: auto;
+}
+
+.hanging-photo[data-lifted="true"] {
+  opacity: .25;
+}
+
+.hanging-photo[data-drop-target="true"] figure {
+  outline: 3px dashed var(--purple);
+  outline-offset: 7px;
+}
+
+.photo-drag-ghost {
+  z-index: 1000;
+  pointer-events: none;
+  will-change: transform;
+  transition: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.photo-drag-ghost figure {
+  box-shadow: 0 25px 65px #460a5430;
+}
+
+.photo-strip[data-dragging="true"], .photo-strip[data-dragging="true"] * {
+  cursor: grabbing;
+}
+
+.photo-strip-keyboard-hint {
+  margin-top: 6px;
+  font-size: 11px;
+  display: block;
+}
+
+.photo-strip-reset {
+  font-size: 12px;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .photo-strip-keyboard-hint {
+    display: none;
+  }
+}
+
+/* [project]/apps/web/src/styles/landing-pointer.css [app-client] (css) */
+.landing-particle-wash {
+  pointer-events: none;
+  background: radial-gradient(at 12% 20%, #ead8f342, #0000 53%), radial-gradient(at 84% 90%, #caf4fb61, #0000 50%);
+  position: absolute;
+  inset: 0;
+}
+
+.landing-particle-canvas {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.atmosphere-interaction-hint {
+  bottom: 32px;
+  color: #79667d;
+  font-size: 11px;
+  position: absolute;
+  inset-inline-start: var(--landing-gutter);
+}
+
+.landing-intro[data-particle-drag="true"], .landing-intro[data-particle-drag="true"] * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 900px), (prefers-reduced-motion: reduce) {
+  .atmosphere-interaction-hint {
+    display: none;
+  }
+}
+
