@@ -1,6 +1,6 @@
 # IEEE WIE UJ — design preview
 
-English and Arabic snapshots of the 6 November 2026 homepage design.
+English and Arabic snapshots of the 7 November 2026 Home and Team design.
 Open https://Ibra0hh.github.io/wie-uj-design-preview/en/ on any device.
 
 This repository contains only public rendered markup, styles, published images,
